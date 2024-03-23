@@ -41,7 +41,9 @@ from pathlib import Path
 PROFILE_NAME = "ds-experience" # the profile to use
 PROJ_KEY = "1234567890abcdefghijklmnopqrstvwyz123456"     # the project to use
 # INPUT_FILE = Path("../../data/samples/2206.01062.pdf")
-INPUT_FILE = Path("SiLK- Simple Learned Keypoints.pdf")
+INPUT_FILE = Path("中文.pdf")
+
+
 
 # Visualization options. Which layers should be included in the visualization
 SHOW_PDF_IMAGE = True
@@ -356,18 +358,18 @@ print([p.name for p in api.projects.list()])
 
 
 # Launch the document conversion
-#documents = ds.convert_documents(
-#    api=api, proj_key=PROJ_KEY, source_path=INPUT_FILE, progress_bar=True
-#)
+documents = ds.convert_documents(
+    api=api, proj_key=PROJ_KEY, source_path=INPUT_FILE, progress_bar=True
+)
 
 
 # In[11]:
 
 
 # Download results
-#output_dir = tempfile.mkdtemp() # TODO: switch to tempfile.TemporaryDirectory() and use `with`
-output_dir = "results_2024-03-23_08h37m39s"
-#documents.download_all(result_dir=output_dir, progress_bar=True)
+output_dir = tempfile.mkdtemp() # TODO: switch to tempfile.TemporaryDirectory() and use `with`
+#output_dir = "results_2024-03-23_08h37m39s"
+documents.download_all(result_dir=output_dir, progress_bar=True)
 
 
 # In[12]:
